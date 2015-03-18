@@ -15,7 +15,7 @@
 </p>
 {% endif %}
 {% if node.children %}
-<ol class="level-{{node.children.0.list_level}}" 
+<ol class="level-{{node.children.0.list_level}} {% if node.no_numbers %} no-numbers {% endif %}"
     type="{{node.children.0.list_type}}">
     {% for c in node.children %}
         {%with node=c template_name="regulations/tree-with-wrapper.html" %}
