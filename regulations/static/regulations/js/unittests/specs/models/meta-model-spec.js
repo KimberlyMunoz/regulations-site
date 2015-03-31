@@ -1,6 +1,6 @@
 var chai = require('chai');
 var expect = chai.expect;
-var sinon = require('sinon'); // Run npm install for this.
+var sinon = require('sinon');
 var sinonChai = require('sinon-chai');
 var jsdom = require('mocha-jsdom');
 
