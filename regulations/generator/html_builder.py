@@ -75,12 +75,20 @@ class HTMLBuilder():
             node['header'] = HTMLBuilder.section_space(node['header'])
 
     def process_node(self, node):
+        # TODO: add a field that indicates which reg we're parsing,
+        # TODO: then in the template if it's Reg J then instead of <ol> do <ul>
         node['label_id'] = '-'.join(node['label'])
         self.process_node_title(node)
 
         node['html_label'] = to_markup_id(node['label'])
         node['markup_id'] = "-".join(node['html_label'])
         node['tree_level'] = len(node['label']) - 1
+
+        print node['label']
+        # special hack for Reg J
+        # definitions are part of 1-b
+        if node['markup_id'] == '1010-1-b':
+            node['no_numbers'] = True
 
         list_level, list_type = self.list_level(
             node['label'], node['node_type'])
