@@ -147,6 +147,8 @@ var ChildView = Backbone.View.extend({
     },
 
     route: function(options) {
+        console.log('bad router!');
+
         if (Router.hasPushState && typeof options.noRoute === 'undefined') {
             var url = this.url,
                 hashPosition;

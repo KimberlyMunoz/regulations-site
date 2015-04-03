@@ -12,6 +12,7 @@ describe('Router:', function() {
     var $, Backbone, RegsRouter;
 
     var loadSpy;
+
     jsdom();
 
     before(function (){
@@ -34,6 +35,7 @@ describe('Router:', function() {
 
     it('/section route routes to /section', function(){
         //this.router.bind('route:loadSection', this.loadSpy);
+        Backbone.history.navigate('1005-3/2014-20681', {trigger: true});
         expect(RegsRouter.loadSection).to.be.ok;
         expect(loadSpy).to.have.been.called();
     });

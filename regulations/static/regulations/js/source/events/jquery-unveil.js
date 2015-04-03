@@ -8,6 +8,7 @@
  * Copyright 2013 Luís Almeida
  * https://github.com/luis-almeida
  */
+/*
 
 (function (factory) {
   // UMD[2] wrapper for jQuery plugins to work in AMD or in CommonJS.
@@ -70,4 +71,4 @@
 
   };
 
-}));
+})); */

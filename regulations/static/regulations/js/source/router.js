@@ -26,6 +26,8 @@ else {
         loadSection: function(section) {
             var options = {id: section};
 
+            console.log('SECTION LOADED');
+
             // to scroll to paragraph if there is a hadh
             options.scrollToId = Backbone.history.getHash();
 
@@ -38,6 +40,8 @@ else {
         loadDiffSection: function(section, baseVersion, newerVersion, params) {
             var options = {};
 
+            console.log('DIFF LOADED');
+
             options.id = section;
             options.baseVersion = baseVersion;
             options.newerVersion = newerVersion;
@@ -48,6 +52,7 @@ else {
         },
 
         loadSxS: function(section, version, params) {
+            console.log('SXS LOADED');
             BreakawayEvents.trigger('sxs:open', {
                 'regParagraph': section,
                 'docNumber': version,
@@ -56,6 +61,7 @@ else {
         },
 
         loadSearchResults: function(reg, params) {
+            console.log('SEARCH LOADED');
             var config = {
                 query: params.q,
                 regVersion: params.regVersion
