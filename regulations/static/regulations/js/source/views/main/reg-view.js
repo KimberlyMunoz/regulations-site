@@ -3,8 +3,8 @@ var $ = require('jquery');
 var _ = require('underscore');
 var Backbone = require('backbone');
 require('../../events/scroll-stop.js');
-var unveil = require('../../events/jquery-unveil');
-//var unveil = require('unveil');
+//var unveil = require('../../events/jquery-unveil');
+var unveil = require('unveil');// WHY won't you loooooaadddddd
 var DefinitionView = require('../sidebar/definition-view');
 var RegModel = require('../../models/reg-model');
 var SectionFooterView = require('./section-footer-view');

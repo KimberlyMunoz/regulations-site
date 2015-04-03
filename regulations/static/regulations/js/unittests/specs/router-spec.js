@@ -4,35 +4,38 @@ var sinon = require('sinon');
 var sinonChai = require('sinon-chai');
 var jsdom = require('mocha-jsdom');
 
+chai.use(sinonChai);
+
 describe('Router:', function() {
     'use strict';
 
-    var $, Backbone, Router;
+    var $, Backbone, RegsRouter;
 
+    var loadSpy;
     jsdom();
 
     before(function (){
         Backbone = require('backbone');
         $ = require('jquery');
         Backbone.$ = $;
-        //Router = require('../../source/router');
+        RegsRouter = require('../../source/router');
+
+        console.log(RegsRouter);
+        console.log(RegsRouter.loadSection(1084));
+
+        //loadSpy = sinon.spy();
+        loadSpy = sinon.spy(RegsRouter, 'loadSection');
 
 
         //Backbone.history.stop(); //stop the router
-        //sinon.spy(Router.prototype, 'index'); //spy on our routes, and they won't get called
-        //sinon.spy(Router.prototype, 'route2');
-
-        //router = new App.Router(); // Set up the spies _before_ creating the router
-        //Backbone.history.start();
+        //Backbone.history.start({ pushState: true });
 
     });
 
-    xit('empty route routes to index', function(){
-        Backbone.history.navigate('', trigger);
-        expect(router.index).toHaveBeenCalled();
+    it('/section route routes to /section', function(){
+        //this.router.bind('route:loadSection', this.loadSpy);
+        expect(RegsRouter.loadSection).to.be.ok;
+        expect(loadSpy).to.have.been.called();
     });
 
-    it('works', function(){
-
-    });
 });
