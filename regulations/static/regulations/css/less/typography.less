@@ -498,6 +498,20 @@ td {
     border: 0;
 }
 
+/*td {
+    border-right: 20px solid #F8F8F8;
+    border-left: 20px solid #F8F8F8;
+}
+td:empty {
+    border-bottom: 1px solid #000;
+}
+
+tbody > tr:nth-child(odd) td{
+    border-right: 20px solid #F1F2F2;
+    border-left: 20px solid #F1F2F2;
+}
+*/
+
 thead {
     background: #515355; /* dark-grey */
 }
@@ -506,6 +520,8 @@ thead th,
 thead td {
     color: #ffffff;
     background: #515355; /* dark-grey */
+    text-align: center;
+    border: 1px solid #515355;
 }
 
 th {
@@ -516,12 +532,18 @@ th {
 }
 
 tr {
-    background: #F8F8F8; /* grey-05% */
+    background: #F8F8F8; // grey-05%
+    background: #fff;
 }
 
-tbody > tr:nth-child(odd){
-    background: #F1F2F2; /* grey-10% */
+tbody td {
+    border: 1px solid #515355;
 }
+
+/*
+tbody > tr:nth-child(odd){
+    background: #F1F2F2; // grey-10%
+} */
 
 /* make tables horizontally scroll on small screens */
 .table-wrap {
